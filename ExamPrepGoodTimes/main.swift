@@ -19,13 +19,13 @@ import Foundation
  Make use of your test plan and algorithm to ensure your code is complete.
  
  */
-var inputToProcess : String = ""
+var inputToProcess : Int = Int.max
 
 // Loop until valid input is received
-while inputToProcess == "" {
+while inputToProcess == Int.max{
     
     // Show the prompt
-    print("Ask the question here? ", terminator: "")
+//    print("Please provide an integer value between 0 and 2359.", terminator: "")
     
     // Get the user's input
     var input : String?
@@ -33,13 +33,14 @@ while inputToProcess == "" {
     
     // Use optional binding to see if the string can be unwrapped (to see if it is not nil)
     if let notNilInput = input {
-        
-        // You probably need to add additional checks to be sure the
-        // input received is valid
-        // Add checks as needed...
-        
-        // Save the input given, as we are certain it's what we are looking for now
-        inputToProcess = notNilInput
+        if let integerInput = Int(notNilInput) {
+            if integerInput > 0 && integerInput < 2400 {
+                inputToProcess = integerInput
+            } else {
+                print("\n")
+                print("Please provide an integer value between 0 and 2359.")
+            }
+        }
         
     }
     
@@ -56,7 +57,14 @@ while inputToProcess == "" {
  */
 
 // Add 'process' code below....
-print("replace with process logic")
+var sampleInput = 1300
+var Ottawa = sampleInput
+var Victoria = sampleInput - 300
+var Edmonton = sampleInput - 200
+var Winnipeg = sampleInput - 100
+var Toronto = sampleInput
+var Halifax = sampleInput + 100
+var StJohns = sampleInput + 130
 
 
 /*
@@ -70,4 +78,19 @@ print("replace with process logic")
  */
 
 // Add 'output' code below... replace what is here as needed.
-print("The input given was: \(inputToProcess)")
+print("\n")
+print("\(Ottawa) in Ottawa")
+print("\n")
+print("\(Victoria) in Victoria")
+print("\n")
+print("\(Edmonton) in Edmonton")
+print("\n")
+print("\(Winnipeg) in Winnipeg")
+print("\n")
+print("\(Toronto) in Toronto")
+print("\n")
+print("\(Halifax) in Halifax")
+print("\n")
+print("\(StJohns) in St.John's")
+print("\n")
+
